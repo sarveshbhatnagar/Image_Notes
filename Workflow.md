@@ -22,6 +22,7 @@ Combine Images.
 # Task5 Enable CommandLine Interface.
 After this enable calling this via command line. Argparse must take input two things, the path and the type of images within that path.
 
-Implement Argparse functionality @@
+Implement Argparse functionality 
 
-Add it to the interface.
+Add it to the interface. @@
+Look at (https://stackoverflow.com/questions/6967331/how-do-i-install-a-script-to-run-anywhere-from-the-command-line/39741427)

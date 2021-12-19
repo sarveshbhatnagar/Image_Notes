@@ -1,7 +1,9 @@
+#! /usr/bin/python3
+
 # Author Sarvesh Bhatnagar
 
 from PIL import Image
-import sys
+import argparse
 import os
 from typing import List, Tuple
 
@@ -212,6 +214,15 @@ class ImageProcessor(LoadImages):
     
 
 if __name__ == "__main__":
-    ip = ImageProcessor("dataset", "png")
+    parser = argparse.ArgumentParser(description="Quick Notes")
+    parser.add_argument("path", type=str, help="Path to the directory containing the images")
+    parser.add_argument("-tp", type=str, default="png", help="Type of the images")
+
+    args = parser.parse_args()
+
+    pth = args.path
+    tp = args.tp
+    ip = ImageProcessor(pth, tp)
     stitched_image = ip.get_stitched_image()
-    stitched_image.save("stitched_image.png")
+    stitched_image.save(os.path.join(pth,"stitched_image.png"))
+    
