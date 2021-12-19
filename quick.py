@@ -219,12 +219,15 @@ if __name__ == "__main__":
     parser.add_argument("-tp", type=str, default="png", help="Type of the images")
     parser.add_argument("-out", type=str, default="stitched.pdf", help="Name of the output file")
 
+    try:
+        args = parser.parse_args()
 
-    args = parser.parse_args()
-
-    pth = args.path
-    tp = args.tp
-    ip = ImageProcessor(pth, tp)
-    stitched_image = ip.get_stitched_image()
-    stitched_image.save(os.path.join(pth, args.out))
+        pth = args.path
+        tp = args.tp
+        ip = ImageProcessor(pth, tp)
+        stitched_image = ip.get_stitched_image()
+        stitched_image.save(os.path.join(pth, args.out))
+    
+    except Exception as e:
+        print(e)
     
