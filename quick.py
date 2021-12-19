@@ -30,7 +30,7 @@ class LoadImages:
     def __init__(self, path, tp="jpg") -> None:
         self.datapath = path
         self.tp = tp
-        self.image_names = self.load_image_names()
+        self.image_names = sorted(self.load_image_names())
         self.images = self.load_images()
         self.image_count = self.get_image_count()
         self.combined_height = self.get_combined_height()
