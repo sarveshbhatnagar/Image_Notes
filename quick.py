@@ -217,6 +217,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Quick Notes")
     parser.add_argument("path", type=str, help="Path to the directory containing the images")
     parser.add_argument("-tp", type=str, default="png", help="Type of the images")
+    parser.add_argument("-out", type=str, default="stitched.pdf", help="Name of the output file")
+
 
     args = parser.parse_args()
 
@@ -224,5 +226,5 @@ if __name__ == "__main__":
     tp = args.tp
     ip = ImageProcessor(pth, tp)
     stitched_image = ip.get_stitched_image()
-    stitched_image.save(os.path.join(pth,"stitched_image.png"))
+    stitched_image.save(os.path.join(pth, args.out))
     

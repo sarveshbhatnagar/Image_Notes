@@ -24,5 +24,7 @@ After this enable calling this via command line. Argparse must take input two th
 
 Implement Argparse functionality 
 
-Add it to the interface. @@
+Add it to the interface. 
 Look at (https://stackoverflow.com/questions/6967331/how-do-i-install-a-script-to-run-anywhere-from-the-command-line/39741427)
+
+Convert to pdf.
